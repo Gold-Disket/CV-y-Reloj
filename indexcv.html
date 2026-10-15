@@ -2,29 +2,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylecv.css">
     <title>CV</title>
 </head>
 <body>
-    <section>
-        <h1>Nombre: José Joaquín Artavia Quesada</h1>
-        <h2>Telefono: 85671948</h2>
+
+    <header>
+        <h1>Nombre: José Joaquín Artavia Quesada</h1> <!-- Puedes poner tu nombre real -->
+        <h2>Telefono: +506 8567-1948</h2>
         <h2>Correo Electronico: 305600725@cuc.cr</h2>
-    </section>
-    <Section>
-        <h3>Estudios: Egresado del CTP de Oreamuno de Informatica Empresarial y Estudiante del CUC en Tecnologias de Información</h3>
-        <h3>Habilidades desarrolladas:</h3>
-        <table>
-            <tr>
-                <th>Lenguaje</th>
-                <th>Nivel</th>
-            </tr>
-            <tr>
-                <td>Java</td>
-                <td>Basico</td>
-            </tr>
-        </table>
-        <button>Proyecto Conversor de Imagenes de Color a Grises</button>
-        <button>Calculadora en Rust</button>
-    </Section>
+    </header>
+
+    <main id="main-cv-view">
+        <section>
+            <h3>Estudios: Egresado del CTP de Oreamuno de Informatica Empresarial y Estudiante del CUC en Tecnologias de Información</h3>
+            <h3>Habilidades desarrolladas:</h3>
+            <table>
+                <tr>
+                    <th>Lenguaje / Habilidad</th>
+                    <th>Nivel</th>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>Basico</td>
+                </tr>
+                <tr>
+                    <td>C#</td>
+                    <td>Basico</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Basico</td>
+                </tr>
+                <tr>
+                    <td>HTML / CSS</td>
+                    <td>Basico</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Null</td>
+                </tr>
+                <tr>
+                    <td>TypeScript</td>
+                    <td>Null</td>
+                </tr>
+                <tr>
+                    <td>Rust</td>
+                    <td>Null</td>
+                </tr>
+            </table>
+            <br>
+
+            <button id="btn-project-1">Ver Proyecto: Conversor de Imagenes de Color a Grises</button>
+            <br><br>
+            <button id="btn-project-2">Ver Proyecto: Calculadora en Rust</button>
+        </section>
+
+        <section>
+            <h4 id="toggle-contact" style="cursor: pointer; color: blue; text-decoration: underline;">
+                Formas de contacto [Mostrar / Ocultar]
+            </h4>
+            <div id="contact-box" style="display: none; border: 1px solid #ccc; padding: 10px; margin-top: 5px;">
+                <p>💼 LinkedIn: linkedin.com/in/tu-perfil</p>
+                <p>🐙 GitHub: github.com/tu-usuario</p>
+                <p>📱 Telegram / WhatsApp: +506 8888-8888</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="view-project-1" style="display: none;">
+        <h2>Conversor de Imágenes de Color a Grises</h2>
+        <p><strong>Descripción:</strong> Aplicación desarrollada en Java que procesa una imagen para transformarla en una imagen en escala de grises</p>
+        <p><strong>Tecnologías usadas:</strong> Java</p>
+        <br>
+
+        <a href="https://github.com/tu-usuario/conversor-imagenes" target="_blank">
+            <button>
+                📥 Ver / Descargar desde GitHub
+            </button>
+        </a>
+        <br><br>
+        <button class="back-to-cv">← Regresar al CV</button>
+    </div>
+
+    <div id="view-project-2" style="display: none;">
+        <h2>Calculadora en Rust</h2>
+        <p><strong>Descripción:</strong> Calculadora basica desarrollada en Rust</p>
+        <p><strong>Tecnologías usadas:</strong> Rust</p>
+        <br>
+        <a href="https://github.com/tu-usuario/calculadora-rust" target="_blank">
+            <button>
+                📥 Ver / Descargar desde GitHub
+            </button>
+        </a>
+        <br><br>
+        <button class="back-to-cv">← Regresar al CV</button>
+    </div>
+
+    <script src="scriptcv.js"></script>
 </body>
 </html>

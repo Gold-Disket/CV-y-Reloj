@@ -1,0 +1,48 @@
+body {
+    background-color: #FFFFFF;
+}
+
+table {
+    width: 480px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+button {
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #E0E0E0;
+    color: #000000;
+    padding: 2px 6px;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #555555;
+    border-bottom: 2px solid #555555;
+    cursor: pointer;
+}
+
+button:active, .banco-btn:active {
+    border-top: 2px solid #555555;
+    border-left: 2px solid #555555;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+td {
+    text-align: center;
+}
+
+a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+
+a:visited {
+    color: #551A8B;
+}
+
+a:hover {
+    color: #FF0000; /* Clásico cambio a rojo al pasar el cursor */
+}
