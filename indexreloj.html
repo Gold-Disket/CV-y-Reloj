@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarmas Web</title>
+</head>
+<body>
+    <h1>Reloj Simple</h1>
+    <div class="time" id="time">00:00:00</div>
+    <div class="input-row">
+        <div class="input-field">
+            <label for="alarmDate">Seleccione una fecha</label>
+            <input type="date" id="alarmDate" class="alarm-input" min="">
+        </div>
+        <div class="input-field">
+            <label for="alarmTime">Seleccione una hora</label>
+            <input type="time" id="alarmTime" class="alarm-input">
+        </div>
+        <button id="setAlarm">Poner la alarma</button>
+    </div>
+    <div class="alarms" id="alarms"></div>
+    <script src="scriptreloj.js"></script>
+    <button>Acerca de...</button>
+</body>
+</html>
