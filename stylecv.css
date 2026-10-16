@@ -1,12 +1,15 @@
 body {
     background-color: #FFFFFF;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table {
     width: 480px;
     margin: 0 auto;
     border-collapse: collapse;
-    border: 1px solid;
+    border: 5px solid;
 }
 
 button {
@@ -44,5 +47,15 @@ a:visited {
 }
 
 a:hover {
-    color: #FF0000; /* Clásico cambio a rojo al pasar el cursor */
+    color: #FF0000;
+}
+
+header{
+    margin-left: 5px;
+}
+
+div{
+    font-family: inherit;
+    font-size: 50px;
+    font-weight: bold;
 }

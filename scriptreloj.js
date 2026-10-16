@@ -86,11 +86,11 @@ function renderAlarms() {
     alarms.forEach((alarm, index) => {
         const alarmItem = document.createElement('div');
         alarmItem.className = 'alarm-item';
-        alarmItem.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin: 10px 0; padding: 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;';
+        alarmItem.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin: 10px 0; background: #f8f9fa; border: 1px solid #ddd;';
         
         alarmItem.innerHTML = `
             <span>📅 <strong>${alarm.date}</strong> - ⏰ <strong>${alarm.time}</strong></span>
-            <button onclick="deleteAlarm(${index})" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Borrar</button>
+            <button onclick="deleteAlarm(${index})" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer;">Borrar</button>
         `;
         alarmsContainer.appendChild(alarmItem);
     });
