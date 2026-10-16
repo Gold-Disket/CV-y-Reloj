@@ -7,14 +7,14 @@ const viewProject2 = document.getElementById('view-project-2');
 const btnProject1 = document.getElementById('btn-project-1');
 const btnProject2 = document.getElementById('btn-project-2');
 
-// Botones de regreso al CV (todos los que tengan la clase .back-to-cv)
+// Botones de regreso al CV
 const backButtons = document.querySelectorAll('.back-to-cv');
 
-// Elementos del bloque de contacto desplegable
+// Elementos de los contacto 
 const toggleContact = document.getElementById('toggle-contact');
 const contactBox = document.getElementById('contact-box');
 
-// --- NAVEGACIÓN ENTRE PANTALLAS ---
+// --- Navegacion entre los proyectos
 
 // Ir al Proyecto 1
 btnProject1.addEventListener('click', () => {
@@ -28,7 +28,7 @@ btnProject2.addEventListener('click', () => {
     viewProject2.style.display = 'block';
 });
 
-// Regresar al CV desde cualquier proyecto
+// Regresar al CV desde uno de los proyectos
 backButtons.forEach(button => {
     button.addEventListener('click', () => {
         viewProject1.style.display = 'none';

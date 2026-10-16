@@ -1,7 +1,7 @@
 // Arreglo para almacenar todas las alarmas
 let alarms = [];
 
-// Establecer la fecha mínima en el input como el día de hoy
+// Establecer la fecha mínima en el input como el día de hoy o el de mañana
 const alarmDateInput = document.getElementById('alarmDate');
 const today = new Date().toISOString().split('T')[0];
 alarmDateInput.value = today;
@@ -24,40 +24,40 @@ function updateClock() {
     const currentDate = now.toISOString().split('T')[0];
     const currentTimeHM = `${hours}:${minutes}`;
 
-    // Verificar si alguna alarma coincide con el momento actual
+    // Verifica si una alarma coincide con la alarma
     let alarmTriggered = false;
     alarms.forEach(alarm => {
         if (!alarm.triggered && alarm.date === currentDate && alarm.time === currentTimeHM) {
             alarm.triggered = true; // Marcar como activada para que no suene cada segundo del mismo minuto
             alarmTriggered = true;
-            playAlarmPattern(); // Ejecutar el sonido de varios pitidos seguidos
+            playAlarmPattern(); // Ejecuta el sonido de varios pitidos seguidos
         }
     });
 
-    // Cambiar color del reloj si una alarma se activó
+    // Cambiar el color del reloj si se activa una alarma
     if (alarmTriggered) {
-        timeDisplay.style.color = '#e74c3c'; // Rojo alerta
+        timeDisplay.style.color = '#e74c3c'; 
         timeDisplay.style.transform = 'scale(1.05)';
         setTimeout(() => {
             timeDisplay.style.color = '#2c3e50';
             timeDisplay.style.transform = 'scale(1)';
-        }, 5000); // Regresa a la normalidad después de 5 segundos
+        }, 5000);
     }
 }
 
-// Función para generar un sonido de alarma repetitivo (5 pitidos cortos)
+// Para generar unos pitillos
 function playAlarmPattern() {
     try {
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         
-        // Repetir el pitido 5 veces, con una pausa de 250 milisegundos entre cada uno
+        // Repite un pitillo
         for (let i = 0; i < 10; i++) {
             setTimeout(() => {
                 const oscillator = audioCtx.createOscillator();
                 const gainNode = audioCtx.createGain();
 
                 oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // Frecuencia de la nota
+                oscillator.frequency.setValueAtTime(880, audioCtx.currentTime);
                 
                 gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
 
@@ -65,7 +65,7 @@ function playAlarmPattern() {
                 gainNode.connect(audioCtx.destination);
 
                 oscillator.start();
-                oscillator.stop(audioCtx.currentTime + 0.1); // Cada pitido dura 100ms
+                oscillator.stop(audioCtx.currentTime + 0.1);
             }, i * 250);
         }
     } catch (e) {
@@ -73,7 +73,7 @@ function playAlarmPattern() {
     }
 }
 
-// Función para renderizar la lista de alarmas en pantalla
+// Para renderizar la lista de alarmas en pantalla
 function renderAlarms() {
     const alarmsContainer = document.getElementById('alarms');
     alarmsContainer.innerHTML = '';
@@ -96,7 +96,7 @@ function renderAlarms() {
     });
 }
 
-// Agregar nueva alarma
+// Agregar una nueva alarma
 document.getElementById('setAlarm').addEventListener('click', () => {
     const date = document.getElementById('alarmDate').value;
     const time = document.getElementById('alarmTime').value;
@@ -109,17 +109,17 @@ document.getElementById('setAlarm').addEventListener('click', () => {
     alarms.push({ date, time, triggered: false });
     renderAlarms();
 
-    // Limpiar campo de hora
+    // Limpiar el campo hora
     document.getElementById('alarmTime').value = '';
 });
 
-// Borrar alarma
+// Borra una alarma
 window.deleteAlarm = function(index) {
     alarms.splice(index, 1);
     renderAlarms();
 };
 
-// Inicializar el reloj (actualizar cada segundo)
+// Inicializa el reloj y lo actualiza en cada segundo
 setInterval(updateClock, 1000);
 updateClock();
 renderAlarms();
